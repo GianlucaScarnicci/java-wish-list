@@ -22,6 +22,18 @@ public class Main {
 		} while (risposta.equals("s"));
 		Collections.sort(wishList);
 		System.out.println("ecco la tua lista " + wishList);
+
+		System.out.print("Inserisci il nome ");
+		String nome = scan.nextLine();
+		System.out.println("Inserici l'indirizzo ");
+		String indirizzo = scan.nextLine();
+		LetteraBabboNatale letterina = new LetteraBabboNatale(nome, indirizzo, wishList);
+		try {
+			System.out.println(letterina.invia());
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+
 		scan.close();
 	}
 
